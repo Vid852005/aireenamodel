@@ -1,70 +1,44 @@
-# 🧠 LightGBM Classification Model
+# LightGBM Classification Model
 
-## 📌 Project Overview
+## Project Overview
+This project implements a supervised machine learning pipeline to predict the **Class** label from structured tabular data.
+The model is built using **LightGBM** and evaluated with the **F1-score** metric.
 
-This project builds a supervised machine learning classification model
-to predict the **`Class`** label using structured tabular data.
+---
 
-The model is trained using **LightGBM** and evaluated using the
-**F1-score** metric.
+## Dataset
+- TRAIN.csv: Training features and target column `Class`
+- TEST.csv: Test features with `ID` column
 
-------------------------------------------------------------------------
+Target:
+- Class (binary)
 
-## 📂 Dataset Description
+---
 
--   `TRAIN.csv` → Training features + target column `Class`
--   `TEST.csv` → Test features with `ID` column
+## Model Description
+- Algorithm: LightGBM (Gradient Boosted Decision Trees)
+- Validation: Stratified K-Fold Cross Validation
+- Feature Scaling: StandardScaler
+- Metric: F1-score
 
-### Target Variable
+---
 
--   `Class` → Binary classification label
+## Training Pipeline
+1. Load data
+2. Feature-target split
+3. Feature scaling
+4. Stratified K-Fold training
+5. F1-score evaluation
+6. Test prediction
 
-------------------------------------------------------------------------
+---
 
-## ⚙️ Model Details
+## How to Run
+pip install pandas numpy scikit-learn lightgbm
 
--   Algorithm: LightGBM (Gradient Boosted Decision Trees)
--   Validation Strategy: Stratified K-Fold Cross Validation
--   Feature Scaling: StandardScaler
--   Evaluation Metric: F1-score
+jupyter notebook competition.ipynb
 
-------------------------------------------------------------------------
+---
 
-## 📊 Evaluation Metric
-
-F1-score balances Precision and Recall:
-
-F1 = 2 × (Precision × Recall) / (Precision + Recall)
-
-This metric is useful for handling imbalanced datasets.
-
-------------------------------------------------------------------------
-
-## 🔄 Training Pipeline
-
-1.  Load dataset
-2.  Split features and target
-3.  Apply scaling
-4.  Perform Stratified K-Fold training
-5.  Train LightGBM model
-6.  Evaluate using F1-score
-7.  Generate predictions for test set
-
-------------------------------------------------------------------------
-
-## 🚀 How to Run
-
-Install dependencies:
-
-    pip install pandas numpy scikit-learn lightgbm
-
-Run the notebook:
-
-    jupyter notebook competition.ipynb
-
-------------------------------------------------------------------------
-
-## 📌 Conclusion
-
-This project demonstrates an efficient LightGBM pipeline optimized for
-F1-score performance on tabular classification data.
+## Conclusion
+A clean and efficient LightGBM classification pipeline optimized for F1-score.
